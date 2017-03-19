@@ -21,6 +21,7 @@ authorize_url = client.authorization_url(client_id=client_id, redirect_uri=url)
 print 'Opening: %s' % authorize_url
 
 webbrowser.open(authorize_url)
+#default values for lat and long
 gmap = gmplot.GoogleMapPlotter(41.939, -88.7767, 10)
 
 def use_Code(code):
@@ -44,15 +45,6 @@ def get_Streams(client, activity, types):
 	streams = client.get_activity_streams(activity, types=types, series_type='time')
 	return streams
 
-def data_Frame(dict, types):
-	print dict,types
-	df = pd.DataFrame()
-
-	for item in types:
-		if item in dict.keys():
-			df.append(item.data)
-	df.fillna('',inplace=True)
-	return df
 
 def parse_activity(act, types):
 	act_id = act.id
@@ -71,19 +63,12 @@ def parse_activity(act, types):
 
 	df['lat'] = map(split_lat, (df['latlng']))
 	df['long'] = map(split_long, (df['latlng']))
-
+	#plots lat and long from data frame this is called on each data stream to prevent inaccurate line drawing
 	gmap.plot(df['lat'], df['long'], 'red', edge_width=1)
 	#gmap.heatmap(df['lat'],df['long'])
 
 	return df
 
-def calc_time(time_sec, start_date):
-	try:
-		timestamp = start_date + datetime.timedelta(seconds=int(time_sec))
-	except:
-		print ' time processing error : ' + str(time_sec)
-		timestamp = start_date
-	return timestamp
 
 def split_lat(series):
 	lat = series[0]
@@ -92,10 +77,6 @@ def split_lat(series):
 def split_long(series):
 	long = series[1]
 	return long
-
-def concatdf(df_lst):
-	return pd.concat(df_lst, ignore_index=False)
-
 
 
 class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
@@ -115,7 +96,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 		print " looping through activities..."
 
 		df_lst = {} 
-
+		#loops over activities and only draws data for streams with distance and non manual entrys
 		for act in activities:
 			if float(act.distance) > 0 and act.manual != True:
 				parse_activity(act, types)
