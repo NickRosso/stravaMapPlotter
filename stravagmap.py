@@ -14,7 +14,7 @@ port = 5000
 url = 'http://localhost:%d/authorized' % port
 allDone = False
 types = ['time', 'latlng']
-limit = 150
+limit = 10
 
 client = stravalib.client.Client()
 authorize_url = client.authorization_url(client_id=client_id, redirect_uri=url)
@@ -103,7 +103,8 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
 		
 
-		gmap.draw("mymap.html")	
+		gmap.draw("mymap.html")
+		allDone = True
 
 
 		
