@@ -8,13 +8,14 @@ import urlparse
 import gmplot
 
 
-
+#Create a local text file with client and secret code from strava api
 client_id, secret = open('client.secret').read().strip().split(',')
 port = 5000
 url = 'http://localhost:%d/authorized' % port
 allDone = False
 types = ['time', 'latlng']
-limit = 10
+#adjusts how many activities to plot
+limit = 350
 
 client = stravalib.client.Client()
 authorize_url = client.authorization_url(client_id=client_id, redirect_uri=url)
@@ -102,7 +103,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 				parse_activity(act, types)
 
 		
-
+		print("Drawing datapoints to html file")
 		gmap.draw("mymap.html")
 		allDone = True
 
