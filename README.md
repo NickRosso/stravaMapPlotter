@@ -43,9 +43,12 @@ gmplot can be used to plot many longitude and latitude that are recorded from st
 	
 	print("Drawing datapoints to html file")
 	gmap.draw("mymap.html")
-	
+
 </p>
 
+<h2>Results</h2>
+![Plotted past activities](/dekalb.png?raw=true "Optional Title")
+![Plotted past activities](/LakeVilla.png?raw=true "Optional Title")
 
 
 <h2>Installation</h2>
