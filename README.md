@@ -46,13 +46,6 @@ gmplot can be used to plot many longitude and latitude that are recorded from st
 
 </p>
 
-<h2>Results</h2>
-
-
-	![alt tag](https://github.com/NickRosso/stravaMapPlotter/blob/master/screenshots/dekalb.png)
-
-	[https://github.com/NickRosso/stravaMapPlotter/blob/master/screenshots/LakeVilla.png]
-
 
 <h2>Installation</h2>
 <p> This project requires a strava api key which is very easy to obtain, just create a strava account and send it a api request under https://www.strava.com/settings/api.</p>
