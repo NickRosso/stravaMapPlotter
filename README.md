@@ -47,8 +47,8 @@ gmplot can be used to plot many longitude and latitude that are recorded from st
 </p>
 
 <h2>Results</h2>
-![Alt text](/dekalb.png "Optional Title")
-![Alt text](/LakeVilla.png "Optional Title")
+![Alt text](screenshots/dekalb.png "Optional Title")
+![Alt text](screenshots/LakeVilla.png "Optional Title")
 
 
 <h2>Installation</h2>
