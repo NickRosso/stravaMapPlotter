@@ -49,9 +49,9 @@ gmplot can be used to plot many longitude and latitude that are recorded from st
 <h2>Results</h2>
 <p>
 	<b>LakeVilla</b>
-	<img src='http://imgur.com/zXCUqRF'>
+	<img src="http://imgur.com/zXCUqRF">
 	<b>DeKalb</b>
-	<img src='http://imgur.com/oPwYkdL'>
+	<img src="http://imgur.com/oPwYkdL">
 </p>
 
 <h2>Installation</h2>
