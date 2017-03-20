@@ -48,10 +48,10 @@ gmplot can be used to plot many longitude and latitude that are recorded from st
 
 <h2>Results</h2>
 <p>
-	Dekalb
-	![Alt text](master/screenshots/dekalb.png "Optional Title")
-	LakeVilla
-	![Alt text](master/screenshots/LakeVilla.png "Optional Title")
+	<b>Dekalb</b>
+	![Alt text](stravaMapPlotter/tree/master/screenshots/dekalb.png "Optional Title")
+	<b>LakeVilla</b>
+	![Alt text](stravaMapPlotter/tree/master/screenshots/LakeVilla.png "Optional Title")
 </p>
 
 <h2>Installation</h2>
